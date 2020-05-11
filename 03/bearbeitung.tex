@@ -1,0 +1,62 @@
+\documentclass[11pt a4paper]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{aligned-overset}
+%\usepackage[normalem]{ulem} % fuer durchstreichen
+\usepackage{cancel} % anderes durchstreichen
+
+% partielle ableitungen
+\newcommand{\delr}{\partial_r}
+\newcommand{\deltheta}{\partial_\theta}
+\newcommand{\delphi}{\partial_\varphi}
+
+% elektrische feldkonstante
+\newcommand{\epsz}{\epsilon_0}
+% 1 / 4pi eps
+\newcommand{\kco}{\frac{1}{4\pi\epsilon_0}}
+
+% fancy header
+\usepackage{fancyhdr}
+\fancyhf{}
+% vspaces in den headern fuer Distanzen notwendig
+% linke Seite: Namen der Abgabegruppe
+\lhead{\textbf{Etem Kalyon\\Matthias Maile\\Roman Surma}\vspace{1.5cm}}
+% rechte Seite: Modul, Gruppe, Semester
+\rhead{\textbf{Physik II - Gruppe 2\\Sommersemester 2020}\vspace{1.5cm}}
+% Center: nr. des blattes
+\chead{\vspace{2.5cm}\huge{\textbf{16. Übungsblatt}}}
+% benoetigt damit der eigentliche Text nicht in der Überschrift steckt
+\setlength{\headheight}{4cm}
+
+% zum zeichnen tikz
+\usepackage{tikz}
+
+\begin{document}
+\thispagestyle{fancy}
+\section*{Aufgabe 7}
+\par{a)}
+Aus dem Druck Gradienten können wir durch Integrieren den Druck bestimmen:
+\begin{align*}
+	\text{Druckgradient: }
+	dP(r) &= -\frac{GM \rho(r)}{r^2} dr \hspace{2cm}
+	M(r) = \frac43 \pi r^3 \rho \\
+	\Leftrightarrow
+	dP(r) &= -\frac{4 \pi r^{\cancel{3}} \rho^2 G}{\cancel{r^2}} dr \\
+	% integral setzen
+	\Rightarrow
+	P(r) = \int dP(r)
+	&= - \int_R^r G \frac43 \pi r^\prime \rho^2 dr^\prime \\
+	% loesen
+	\Rightarrow
+	P(r) &= - G \frac23 \pi \rho^2 r^{\prime 2} \vert_R^r \\
+	% einsetzen in stmmfkt
+	P(r) &= \frac23 \pi G \rho^2 (R^2 - r^2)
+\end{align*}
+
+
+\section*{Aufgabe 8}
+\section*{Aufgabe 9}
+
+\end{document}
