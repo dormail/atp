@@ -1,0 +1,115 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{aligned-overset}
+
+% partielle ableitungen
+\newcommand{\delr}{\partial_r}
+\newcommand{\deltheta}{\partial_\theta}
+\newcommand{\delphi}{\partial_\varphi}
+
+% elektrische feldkonstante
+\newcommand{\epsz}{\epsilon_0}
+% 1 / 4pi eps
+\newcommand{\kco}{\frac{1}{4\pi\epsilon_0}}
+
+% fancy header
+\usepackage{fancyhdr}
+\fancyhf{}
+% vspaces in den headern fuer Distanzen notwendig
+% linke Seite: Namen der Abgabegruppe
+\lhead{\textbf{Benedikt Sander \\Tahir Kamcili \\ Matthias Maile}\vspace{1.5cm}}
+% rechte Seite: Modul, Gruppe, Semester
+\rhead{\textbf{Astroteilchenphysik\\Sommersemester 2020}\vspace{1.5cm}}
+% Center: nr. des blattes
+\chead{\vspace{2.5cm}\huge{\textbf{2. Übungsblatt}}}
+% benoetigt damit der eigentliche Text nicht in der Überschrift steckt
+\setlength{\headheight}{4cm}
+
+% zum zeichnen tikz
+\usepackage{tikz}
+
+\begin{document}
+\thispagestyle{fancy}
+{\large\textbf{Aufgabe 4}}
+\par{a)}
+Die Masse eines Hohlkugel-Ausschnits aus der Sonne kann angegeben werden als
+\[
+	dM = \rho(r) 4\pi r^2 dr
+\]
+Aus dem Newtonschen Gravitationsgesetz folgt dann die Gewichtskraft, die
+auf diese Kugelschale wirkt:
+\[
+	F_G = -G \frac{M_{\text{Sonne}} * dM}{r^2} 
+	= -G \frac{M_{\text{Sonne}} * \rho(r) 4\pi r^2 dr}{r^2}
+	= -GM 4\pi \rho(r) \ dr
+\]
+Die Kraft die eine Druckdifferenz $dP$ auf eine Fläche A bewirkt lässt sich 
+schreiben als
+\[
+	F_p = A * dP = 4\pi r^2 dP
+\]
+Für ein hydrostatisches Gleichgewicht müssen diese Kräfte gleich sein.
+Andernfalls würde sich der Stern ausdehnen bzw. zusammen ziehen, bis ein 
+Gleichgeicht herscht.\\
+Dadurch lässt sich der Druckgradient bestimmen:
+\begin{align*}
+	-GM 4\pi \rho(r) \ dr
+	&= 4\pi r^2 dP \\
+	% umformen
+	\Rightarrow
+	\frac{dP}{dr} &= -\frac{GM \rho(r)}{r^2}
+\end{align*}
+
+\vspace{0.5cm}
+\par{b)}
+Der Strahlungsfluss durch eine Kugelfläche entspricht der Leuchtkraft 
+der Kugel geteilt durch die Kugelfläche:
+\[
+	F_{\text{rad}} = \frac{P}{A} = \frac{P}{4\pi r^2}
+\]
+\begin{center}
+	{\footnotesize{(P entspricht hier jetzt  der Strahlungsleistung, 
+	nicht dem Druck)}}
+\end{center}
+Wenn wir den Graviationsdruckgradienten mit dem dem Strahlungsgradienten 
+gleichsetzen
+erhalten wir die maximale Leuchtkraft (Eddington Leuchtkraft):
+\begin{align*}
+	-G \frac{M\rho(r)}{r^2} 
+	&= -\frac{\kappa\rho(r)}{c} F_{\text{rad}} \\
+	% F_rad einsetzen
+	\Leftrightarrow
+	-G \frac{M\rho(r)}{r^2} 
+	&= -\frac{\kappa\rho(r)}{c} \frac{P}{4\pi r^2} \\
+	% kuerzen
+	\Leftrightarrow
+	GM
+	&= \frac{\kappa}{c} \frac{P}{4\pi} \\
+	% nach p umstellen
+	\Leftrightarrow
+	P
+	&= \frac{4\pi c M G}{\kappa}
+\end{align*}
+
+\vspace{0.5cm}
+\par{c)}
+Wenn die Leuchtkraft eines Sternes das Eddington Limit übersteigt, steigt 
+der Strahlungsfluss $F_\text{rad}$, wodurch auch der Strahlungsdruckgradient
+steigt. Über der Edington Grenze ist der Strahlungsdruck größer als der
+Graviationsdruck, d.h. der Stern wird instabil und würde äußere Schichten 
+ins Weltall ``abwerfen``.
+
+\vspace{0.5cm}
+\par{d)}
+\[
+	P_\text{Edd} = \frac{4\pi c MG}{\kappa} 
+	= \frac{4\pi c  * 0.0083 * M_\odot G}{0.02m^2}kg
+	\approx 2.1 * 10^{31} W
+\]
+
+
+
+\end{document}
