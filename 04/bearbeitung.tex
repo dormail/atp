@@ -82,6 +82,87 @@ Mit dieser Abschäzung erhalten wir für die eben genannten Werte:
 	= 13.4 * 10^9 \text{ Jahre}
 \end{align*}
 \vspace{0.5cm}
-b) 
+b) Aus der Kosmischen Rotverschiebung folgen $a(t)$ und $\dot a(t)$:
+\begin{align*}
+	a(t) \cdot (1+z) = a_0 \Rightarrow 
+	a(t) &= \frac{a_0}{1+z} \\
+	% ableitung mit quotientenregel
+	d_t a(t) &= a_0 \frac{d_tz}{(1+z)^2}
+\end{align*}
+\newpage
+\setlength{\headheight}{0cm}
+Setzen wir das in $H$ ein erhalten wir:
+\begin{align*}
+	H(a(t)) = \frac{d_t a}{a} 
+	&= \frac{1+z}{a+0} \frac{d_tz \cdot a_0}{(1+z)^2} \\
+	% kuerzen
+	&= \frac{d_tz}{1+z} \tag{1}
+\end{align*}
+Aus der ersten Friedmann-Gleichung folgt zudem der Zusammenhang zwischen
+dem Hubble-Parameter $H$ und der kosmischen Rotverschiebung $z$:
+\[
+	H(z) = H_0 \sqrt{
+		\Omega_\text{Masse} (1+z)^3 + 
+		\Omega_\text{Strahlung} (1+z)^4 +
+		\Omega_\text{Dunkle Energie}}
+\]
+Wenn wir diesen Ausdruck mit dem aus $(1)$ gleichsetzen erhalten wir den
+differentiellen Zusammenhang zwischen der Zeit und der kosmischen 
+Rotverschiebung:
+\begin{align*}
+	\frac{d_tz}{1+z} \overset{!}&{=}
+	H(z) = H_0 \sqrt{
+		\Omega_\text{Masse} (1+z)^3 + 
+		\Omega_\text{Strahlung} (1+z)^4 +
+		\Omega_\text{Dunkle Energie}} \\
+	% umstellen, differential ausschreiben
+	\frac{dz}{dt} &=
+	H_0 \sqrt{
+		\Omega_\text{Masse} (1+z)^5 + 
+		\Omega_\text{Strahlung} (1+z)^6 +
+		\Omega_\text{Dunkle Energie} (1+z)^2} \\
+	% differential umstellen
+	dt &=
+	\frac{dz}{ H_0 \sqrt{
+		\Omega_\text{Masse} (1+z)^5 + 
+		\Omega_\text{Strahlung} (1+z)^6 +
+		\Omega_\text{Dunkle Energie} (1+z)^2}}
+\end{align*}
+\vspace{0.5cm}
+c) Die Vereinfachung, das Universum bestehe nur aus Materie liefert uns:
+\[
+	\Omega_\text{Masse} = 1 \quad
+	\Omega_\text{Strahlung} = 0 \quad
+	\Omega_\text{Dunkle Energie} = 0 
+\]
+Damit können wir das Alter des Universums berechnen:
+\begin{align*}
+	t_0 &=
+	\int_0^{t_0} dt =
+	\int_{z(t = 0)}^{z = z(t = t_0)}
+	\frac{dz}{ H_0 \sqrt{
+		\Omega_\text{Masse} (1+z)^5 + 
+		\Omega_\text{Strahlung} (1+z)^6 +
+		\Omega_\text{Dunkle Energie} (1+z)^2}} \\
+	% Omegae einsetzen
+	&= \int_{z(t = 0)}^{z = z(t = t_0)}
+	\frac{dz}{ H_0 \sqrt{(1 + z)^5 } } \\
+	% stammfkt bilden
+	&= \frac{1}{H_0} \left[ \frac{-1}{1.5} (1 + z)^{-1.5} \right]
+	_{z(t=0)}^{z=z(t=t_0)} \\
+	% definition von z einsetzen
+	&= \frac{1}{H_0} 
+	\left[ \frac{-1}{1.5} \left(\frac{R(t)}{R(t_0)}\right)^{1.5}
+	\right]_{t=0} ^{t=t_0} \\
+	% einsetze
+	&= \frac{1}{H_0} \left( \frac{-1}{1.5} 
+	\underbrace{\left(\frac{R(0)}{R(t_0)}\right)^{1.5}}_{=0}
+	- \frac{-1}{1.5} 
+	\underbrace{\left(\frac{R(t_0)}{R(t_0)}\right)^{1.5}}_{=1} 
+	\right) \\
+	% ergebnis
+	&= \frac{2}{3  H_0}
+\end{align*}
+
 
 \end{document}
