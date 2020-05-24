@@ -163,6 +163,57 @@ Damit können wir das Alter des Universums berechnen:
 	% ergebnis
 	&= \frac{2}{3  H_0}
 \end{align*}
+Für die zwei Messwerte von $H_0$ erhalten wir dann:
+\begin{align*}
+	&\text{Hintergrund-Strahlung } &
+	t_0 &= \frac23 \frac{1}{66.6} \cdot 3.09 \cdot 10^{19} s
+	= 9.87 * 10^9 \text{ Jahre}
+	\\
+	&\text{Distanzleiter } &
+	t_0 &= \frac23 \frac{1}{74.03} \cdot 3.09 \cdot 10^{19} s
+	= 8.93 * 10^9 \text{ Jahre}
+\end{align*}
+
+
+\newpage
+d) Wenn wir für die Verhältnisse jedoch die Ergebnisse der Planck-Mission
+einsetzen, erhalten wir:
+\[
+	\Omega_\text{Masse} = 0.315 \quad
+	\Omega_\text{Strahlung} \approx 0 \quad
+	\Omega_\text{Dunkle Energie} = 0.685
+\]
+Mit dem selben Ansatz wie in c) lässt sich damit das Alter des 
+Universums bestimmen:
+\begin{align*}
+	t_0 &=
+	\int_0^{t_0} dt =
+	\int_{z(t = 0)}^{z = z(t = t_0)}
+	\frac{dz}{ H_0 \sqrt{
+		\Omega_\text{Masse} (1+z)^5 + 
+		\Omega_\text{Strahlung} (1+z)^6 +
+		\Omega_\text{Dunkle Energie} (1+z)^2}} \\
+	% Omegae einsetzen
+	&= 
+	\int_{0}^{\infty}
+	\frac{dz}{ H_0 \sqrt{
+		0.315 (1+z)^5 + 
+		0.685 (1+z)^2}} \\
+\end{align*}
+mit der numerischen Lösung
+\[
+	t_0 = 0.951 \cdot \frac1{H_0}
+\]
+Damit folgen zwei Möglichkeiten für das Alter des Universums:
+\begin{align*}
+	&\text{Hintergrund-Strahlung } &
+	t_0 &= 0.951 \cdot \frac{1}{66.6} \cdot 3.09 \cdot 10^{19} s
+	= 14.07 * 10^9 \text{ Jahre}
+	\\
+	&\text{Distanzleiter } &
+	t_0 &= 0.951 \cdot \frac{1}{74.03} \cdot 3.09 \cdot 10^{19} s
+	= 12.74 * 10^9 \text{ Jahre}
+\end{align*}
 
 
 \end{document}
