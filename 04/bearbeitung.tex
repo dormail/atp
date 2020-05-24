@@ -1,0 +1,87 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{aligned-overset}
+
+% partielle ableitungen
+\newcommand{\delr}{\partial_r}
+\newcommand{\deltheta}{\partial_\theta}
+\newcommand{\delphi}{\partial_\varphi}
+
+% elektrische feldkonstante
+\newcommand{\epsz}{\epsilon_0}
+% 1 / 4pi eps
+\newcommand{\kco}{\frac{1}{4\pi\epsilon_0}}
+
+% fancy header
+\usepackage{fancyhdr}
+\fancyhf{}
+% vspaces in den headern fuer Distanzen notwendig
+% linke Seite: Namen der Abgabegruppe
+\lhead{\textbf{Benedikt Sander \\Tahir Kamcili \\ Matthias Maile}\vspace{1.5cm}}
+% rechte Seite: Modul, Gruppe, Semester
+\rhead{\textbf{Astroteilchenphysik\\Sommersemester 2020}\vspace{1.5cm}}
+% Center: nr. des blattes
+\chead{\vspace{2.5cm}\huge{\textbf{4. Übungsblatt}}}
+% benoetigt damit der eigentliche Text nicht in der Überschrift steckt
+\setlength{\headheight}{4cm}
+
+% zum zeichnen tikz
+\usepackage{tikz}
+
+\begin{document}
+\thispagestyle{fancy}
+\noindent
+{\large\textbf{Aufgabe 12}} \\[0.2cm]
+a) Für die Bestimmung der Hubble-Konstante $H_0$ gibt es zwei Methoden, 
+welche allerdings zwei abweichende Ergebnisse liefert.\\
+Eine Methode ist es, mit der kosmischen Hintergrundstrahlung die Hubble
+Konstante zu ermittlen. Dabei erhält man einen Wert für $H_0$:
+\[
+	H_0 = 66.6 \ km \ s^{-1} Mpc^{-1}
+\]
+Eine andere Methode ist es, von einem entfernten Objekt mit der 
+kosmischen Abstandsleiter die Distanz zu bestimmen
+und dann ausgehend von der 
+Distanz und der Rotverschiebung die Hubble-Konstante zu errechnen.
+\\
+Damit erhält man einen (vom vorherigen Wert stark abweichenden) Wert:
+\[
+	H_0 = 74.03  \ km \ s^{-1} Mpc^{-1}
+\]
+Die Differenz zwischen den Werten ist sehr signifikant, und bei der 
+Präzision der Messungen auch nicht mit Messfehlern erklärbar. \\
+Da der Hubble-Parameter nicht konstant ist, könnte man eine 
+solche Differenz mit dieser zeitlichen Abhängigkeit erklären. Allerdings 
+weichen die Messwerte auch bei gleichen Messzeiträumen ab. Daher muss 
+es noch weitere Effekte geben, welche noch nicht im kosmologischen 
+Standartmodel einbezogen werden. 
+\\[0.2cm]
+Aus dem Zusammenhang $v = H_0 d$ lässt sich das Alter des Universums $t_0$
+abschätzen:
+\begin{align*}
+	v &= H_0 d \\
+	% integral setzen
+	\int_0^{t_0} v \ dt &= \int_0^{t_0} H_0 d \ dt \\
+	% integral berechnen
+	d &= t_0 \cdot H_0 d \\
+	% umstellen
+	\Rightarrow 
+	t_0 &= \frac{1}{H_0}
+\end{align*}
+Mit dieser Abschäzung erhalten wir für die eben genannten Werte:
+\begin{align*}
+	&\text{Hintergrund-Strahlung } &
+	t_0 &= \frac{1}{66.6} \cdot 3.09 \cdot 10^{19} s
+	= 14.8 * 10^9 \text{ Jahre}
+	\\
+	&\text{Distanzleiter } &
+	t_0 &= \frac{1}{74.03} \cdot 3.09 \cdot 10^{19} s
+	= 13.4 * 10^9 \text{ Jahre}
+\end{align*}
+\vspace{0.5cm}
+b) 
+
+\end{document}
