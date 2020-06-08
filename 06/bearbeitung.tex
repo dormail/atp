@@ -1,0 +1,101 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{aligned-overset}
+
+% partielle ableitungen
+\newcommand{\delr}{\partial_r}
+\newcommand{\deltheta}{\partial_\theta}
+\newcommand{\delphi}{\partial_\varphi}
+
+% elektrische feldkonstante
+\newcommand{\epsz}{\epsilon_0}
+% 1 / 4pi eps
+\newcommand{\kco}{\frac{1}{4\pi\epsilon_0}}
+
+% fancy header
+\usepackage{fancyhdr}
+\fancyhf{}
+% vspaces in den headern fuer Distanzen notwendig
+% linke Seite: Namen der Abgabegruppe
+\lhead{\textbf{Benedikt Sander \\Tahir Kamcili \\ Matthias Maile}\vspace{1.5cm}}
+% rechte Seite: Modul, Gruppe, Semester
+\rhead{\textbf{Astroteilchenphysik\\Sommersemester 2020}\vspace{1.5cm}}
+% Center: nr. des blattes
+\chead{\vspace{2.5cm}\huge{\textbf{6. Übungsblatt}}}
+% benoetigt damit der eigentliche Text nicht in der Überschrift steckt
+\setlength{\headheight}{4cm}
+
+% zum zeichnen tikz
+\usepackage{tikz}
+
+\begin{document}
+\thispagestyle{fancy}
+\noindent
+{\large\textbf{Aufgabe 17}} \\[0.2cm]
+
+a) Der CMB ist die erste (bzw. älteste) beobachtbare Strahlung im Universum. \\
+Aufgrund der hohen (Energie- und Materie-) Dichte kurz nach dem Urknall konnten sich Protonen und 
+Elektronen nicht binden. Durch diese mit freien Elelektronen gefüllte ``Wolke`` konnten sich aufgrund 
+der Thomson-Streuung Photonen nicht ausbreiten.\\
+Erst als sich das Universum so weit ausgebreitet hatte, dass die Temperatur unter $3000K$ fiel, 
+(ca. {380000} Jahre nach dem Urknall) konnten sich 
+Wasserstoffatome bilden und elektromagnetische Strahlung konnte sich ausbreiten.\\
+Da sich das Universum weiter ausgedehnt hat, fiel auch die dem CMB entsprechende Temperatur (wenn man annimmt 
+die Strahlung käme von einem schwarzen Strahler) weiter runter, mittlerweile enstpricht dem CMB eine Temperatur von
+$2.725K$. 
+Diese Strahlung liegt im Mikrowellenbereich und besitzt ihre maximale Stärke bei $\lambda = 1.06\ \text{mm}$.
+\\
+Aus der Differenz zwischen aktueller Temperatur des CMB, der $3000K$ Grenze und der kosmologischen Rotverschiebung
+rührt dann ein Skalenfaktor $z=1089$ her, welcher die Ausdehnung des Universums seit der Enkopplung von Materie und 
+Strahlung beschreibt:
+\[ 3000K \approx 2.725K \cdot (1 + z) \]
+
+b) Das Multipolspektrum trägt die Temperaturfluktationen (bzw. die damit verbundenen \\ Fluktuationen des CMB) 
+gegen die Bogenlänge, auf der diese Fluktuation stattfindet, auf. \\
+Da hier über $m$ (Anzahl Moden entlang es Äquators) der durchschnitt gebildet wurde kann man die mittlere 
+Wellen-``länge`` (die hier einem Winkel entspricht) abschätzen mit
+\[ \lambda \approx \frac{\pi}{l}. \]
+Wobei auch der Ersteller des Diagramms diese Abschätzung (obere und untere $x$-Achsen Skala) benutzt hat. \\
+Der Peak bei $\sim 1^\circ$ bzw. $l = 200$ bedeutet zum Beispiel, dass wenn man einen Bereich am Himmel
+mit einem Radioteleskop mit einer  Begrenzung auf $1^\circ$ ``Sichtfeld``
+betrachtet, starke Fluktuationen (im CMB Spektrum) sieht.
+
+\newpage
+c) Silk-Dämpfung:\\
+Die Silk-Dämpfung sorgte im frühen Universum (vor der Entkopplung) für eine bessere homogenisierung des 
+Universums. \\
+Dabei diffundierten Photonen von warmen  (und damit massereicheren) Regionen des Universums in Kältere. 
+\begin{center}
+\begin{tikzpicture}
+	% ovale und anotation
+	\draw[draw=red] (-3,0) circle [x radius = 2, y radius = 1]
+		(-3,1.2) node[red] {Warme Region};
+	\draw[draw=blue] (3,0) circle [x radius = 2, y radius = 1]
+		(3,1.2) node[blue] {Kalte Region};
+	% label photonen
+	\draw (0, 0.85) node {Diffundierende};
+	\draw (0, 0.5) node {Photonen};
+	% pfeile mit label 
+	\draw [->] (-1.5, 0.3) -- (1.5, 0.3);
+	\draw [->] (-1.5, 0.0) node[left] {$\gamma$} (-1.5, 0.0) -- (1.5, 0.0);
+	\draw [->] (-1.5, -0.3) -- (1.5, -0.3);
+\end{tikzpicture}
+\end{center}
+Die Photonen ziehen dabei Elektronen mit sich, welche mit der Coulombkraft auch Protonen mit sich ziehen.\\
+Damit findet insgesamt ein Materiefluss von massereichen zu massearmen Regionen statt, welcher gegen Anisotropien 
+``vorgeht``.
+\newline
+\vspace{0.0cm}
+\\
+Nicht-integrierter Sachs-Wolfe-Effekt \\
+Dadurch dass zum Zeitpunkt der Entkopplung keine 100\%-ige Isotropie im Universum vorlag, gab es Stellen 
+gebiete mit höherer und niedrigerer Massedichte und damit
+höheren und niedrigeren Gravitationspotentialen. Diese Potentialunterschiede sorgen bei den Photonen,
+welche aus den entsprechenden Regionen stammen, für eine Rot- bzw. Blauverschiebung, welche aus der 
+allgemeinen Relativitätstheorie folgt.
+
+
+\end{document}
