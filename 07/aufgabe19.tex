@@ -1,0 +1,84 @@
+
+\documentclass[11pt, a4paper]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{aligned-overset}
+
+% partielle ableitungen
+\newcommand{\delr}{\partial_r}
+\newcommand{\deltheta}{\partial_\theta}
+\newcommand{\delphi}{\partial_\varphi}
+
+% elektrische feldkonstante
+\newcommand{\epsz}{\epsilon_0}
+% 1 / 4pi eps
+\newcommand{\kco}{\frac{1}{4\pi\epsilon_0}}
+
+% fancy header
+\usepackage{fancyhdr}
+\fancyhf{}
+% vspaces in den headern fuer Distanzen notwendig
+% linke Seite: Namen der Abgabegruppe
+\lhead{\textbf{Benedikt Sander \\Tahir Kamcili \\ Matthias Maile}\vspace{1.5cm}}
+% rechte Seite: Modul, Gruppe, Semester
+\rhead{\textbf{Astroteilchenphysik\\Sommersemester 2020}\vspace{1.5cm}}
+% Center: nr. des blattes
+\chead{\vspace{2.5cm}\huge{\textbf{7. Übungsblatt}}}
+% benoetigt damit der eigentliche Text nicht in der Überschrift steckt
+\setlength{\headheight}{4cm}
+
+% zum zeichnen tikz
+\usepackage{tikz}
+
+\begin{document}
+\thispagestyle{fancy}
+\noindent
+{\large\textbf{Aufgabe 19}} \\[0.2cm]
+a) Da sich in beiden Prozessen jeweils ein Teilchen in zwei Aufteilt, verdoppelt sich nach jedem Splitting
+die Teilchenanzahl:
+\[ N_n = 2^n \]
+Die Energie wird hälftig aufgeteilt, d.h. dass die Energie pro Teilchen nach $n$ Splits gegeben ist durch
+\[ E_n = \frac{E_0}{N_n} = E_0 \cdot 2^{-n}. \]
+b) Der Teilchenschauer geht so lange weiter, bis $E_n$ unter die kritische Energie $E_c$ fällt. Die Anzahl an
+Splitting Events ist somit vom logarithmus der Anfangsenergie abhängig:
+\[ 
+	E_n = E_0 \cdot 2^{-n} \overset !> E_c 
+	\Rightarrow
+	n_\text{max} = \text{log}_2 \left( \frac{E_0}{E_c} \right)
+\]
+Daraus folgt die maximale Anzahl an Teilchen:
+\[
+	N_\text{max} = 2^{n_\text{max}} = 2^{\text{log}_2 (E_0 / E_c )} = \frac{E_0}{E_c} 
+\]
+Wenn man die Splitting-Länge $d$ kennt lässt sich die atmosphärische Tiefe errechnen:
+\[ X_\text{max}^\gamma = d \cdot n_\text{max} = d \cdot \text{log}_2 \left( \frac{E_0}{E_c} \right) \]
+c) 
+\[ n_\text{max} = \text{log}_2 \left( \frac{E_0}{E_c} \right) = 13.522 \]
+\[ X_\text{max}^\gamma = d \cdot n_\text{max} = 338.05 \frac{\text{g}}{\text{cm}^2} \]
+d)
+\begin{align*}
+	X
+	&= \int \rho(h) \ dh \\
+	% einsetzen
+	&= \int_{h_\text{max}}^\infty \rho(0) \exp \left(-\frac{h}{h_s} \right) \ dh \\
+	% integrieren
+	&= \left. -h_s \ \rho(0) \exp \left(-\frac{h}{h_s} \right) \right|_{h_\text{max}}^\infty \\
+	% einsetzen
+	&= h_s \ \rho(0) \exp \left(-\frac{h_\text{max}}{h_s} \right) \\
+	\Rightarrow
+	\exp \left(-\frac{h_\text{max}}{h_s} \right)
+	&= \frac{X}{h_s \ \rho(0)} \\
+	% ln setzen
+	\Rightarrow
+	-\frac{h_\text{max}}{h_s}
+	&= \ln \left( \frac{X}{h_s \ \rho(0)} \right) \\
+	% endergebnis
+	\Rightarrow
+	h_\text{max}
+	&= -h_s \ \ln \left( \frac{X}{h_s \ \rho(0)} \right) \\
+	&\approx 9.57 \ \text{km}
+\end{align*}
+
+\end{document}
